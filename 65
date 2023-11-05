@@ -1,0 +1,22 @@
+def SymmetricalDay(year1,year2):
+    res = []
+    import datetime as dt
+    for i in range(year1,year2):
+            for j in range(1,13):
+                    for k in range(1,32):
+                            try: t = dt.date(i,j,k).strftime('%Y%m%d')
+                            except: pass
+                            if t==t[::-1]:
+                                res.append(t)
+    return res
+ 
+total = 0
+for j in range(1000,10000,100):
+    count = 0
+    for i,d in enumerate(SymmetricalDay(j,100+j)):
+        count += 1
+        total += 1
+        print(d,end='\n' if i%5==4 else '\t')
+    if count!=0: print()
+    print(f'{j}-{100+j},Count:',count)
+print('Total:',total)
