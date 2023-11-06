@@ -1,0 +1,11 @@
+num=int(input())
+a=input().split(' ')
+r=[]
+for x in a:
+    if int(x)%2==1:
+        r.append(int(x))
+r.sort()
+for i in range(len(r)):
+    r[i]=str(r[i])
+ji=','.join(r)
+print(ji)
