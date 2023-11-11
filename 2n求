@@ -1,0 +1,30 @@
+int fact(int n)
+{
+    int a = 0, b;
+    while (n - pow(2, a) >= 0) a++;//确定最大的a;
+    a--;
+    b = n - pow(2, a);//确定b的值，这里将n分为两部分 n=2(a)+b
+    if (a == 0) printf("2(0)");
+    else if (a == 1) printf("2");
+    else
+    {
+        printf("2(");
+        fact(a);
+        printf(")");
+    }
+    if (b == 0);
+    else if (b == 1) printf("+2(0)");
+    else if (b == 2) printf("+2");
+    else
+    {
+        printf("+");
+        fact(b);
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    fact(n);
+    return 0;
+}
