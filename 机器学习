@@ -1,0 +1,22 @@
+from sklearn import model_selection
+from sklearn import datasets
+iris = datasets.load_iris()
+X=iris.data
+for d in X:
+    if(d[3]==0.1):
+        d[3]=0
+    elif d[3]==0.2:
+        d[3]=1
+    else:
+        d[3]=2
+y=iris.target
+
+
+def splitData():
+    # 任务：将数据集拆分为70%的训练集和30%测试集,保存到变量X_train, X_test, y_train, y_test中
+    ########## Begin ##########
+   
+
+
+    ########## End ##########
+    return X_test,y_test
